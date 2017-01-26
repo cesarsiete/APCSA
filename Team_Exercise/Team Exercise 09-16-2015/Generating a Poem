@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+/**
+ * Team Exercise 9/16/2015
+ * Lesson 3 Exercise 1
+ * Generating a Poem
+ * 
+ * @author Cesar Alexander Siete, Adrian Rivas, Andree Moreno, and Anthony Caban
+ * @version 09/16/2015
+ */
+public class TE_Lesson_3_Exercise_1
+{
+    public static void main(String[] args)
+    {
+         Scanner scan = new Scanner (System.in);
+         String red;
+         String blue;
+         String click;
+         String something;
+         
+         System.out.print("Enter something that is red:");
+         red = scan.nextLine();
+         System.out.print("Enter something that is blue:");
+         blue = scan.nextLine();
+         System.out.print("Enter something that can be clicked:");
+         click = scan.nextLine();
+         System.out.print("Enter anything you want:");
+         something = scan.nextLine();
+         
+         System.out.println("\"" + red + " are red,");
+         System.out.println( blue + " are blue,");
+         System.out.println("Click on the " + click);
+         System.out.println("There's a " + something + " waiting for you.\"");
+         
+         
+         
+        
+    }
+}

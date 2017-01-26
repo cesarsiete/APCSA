@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+/**
+ * Team Exercise 10/06/15
+ * Write a program that reads three numbers and prints ҩncreasingӠif they are in increasing order, ҤecreasingӠif they are in decreasing order, and ҮeitherӠotherwise. 
+ * Here, ҩncreasingӠmeans ҳtrictly increasingӬ with each value larger than its predecessor. The sequence 3 4 4 would not be considered increasing.
+ * 
+ * @author Cesar Alexander Siete and Andree Moreno
+ * @version 10/06/15
+ */
+public class Team_Exercise
+{
+    public static void main(String[] args)
+    {
+         Scanner scan = new Scanner (System.in);
+        
+         int num1 = scan.nextInt();
+         int num2 = scan.nextInt();
+         int num3 = scan.nextInt();
+         
+         if (num1 > num2 && num2 > num3)
+         {
+           System.out.println("decreasing");
+         }else if (num1 < num2 && num2 < num3)
+          {
+            System.out.println ("increasing");
+          }else{
+            System.out.println("neither");
+          }
+    }
+}

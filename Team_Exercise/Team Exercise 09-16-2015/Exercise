@@ -1,0 +1,19 @@
+/**
+ * Team Exercise 9/16/2015
+ * Lesson 2 Exercise 1
+ * 
+ * @author Cesar Alexander Siete
+ * @version 09/16/2015
+ */
+public class TE_Lesson_2_Exercise_1
+{
+    public static void main(String[] args)
+    {
+        System.out.println("\t\t* * * * *\n\t\t* * * * *\n\t\t* * * * *\n\t\t* * * * *\n\t\t* * * * *");
+        System.out.println("    \"");
+        System.out.println("   / \\ ");
+        System.out.println("  /   \\ ");
+        System.out.println(" /     \\  ");
+        System.out.println("/ _ _ _ \\");
+    }
+}

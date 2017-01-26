@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+/**
+ * Team Exercise 09/29/2015
+ * Write a program that reads an integer and prints whether it is negative, zero, or positive.
+ * 
+ * @author Cesar Alexander Siete and Andree Moreno
+ * @version 09/30/2015
+ */
+public class Team_Exercise
+{
+    public static void main(String[] args)
+    { 
+      Scanner scan = new Scanner(System.in);   
+         System.out.println("Write an integer");
+         int num = scan.nextInt();
+         
+         if (num == 0)
+         {
+         System.out.print("Your number is zero.");
+         }
+         
+         if (num > 0)
+         {
+         System.out.print("Your number is positive.");
+         }
+          
+         if (num < 0)
+         {
+         System.out.print("Your number is negative.");
+         }
+        
+    }
+}

@@ -1,0 +1,21 @@
+import java.io.*;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+import java.lang.Math;
+
+class Team_Name{
+
+
+     public static void main (String str[]) throws IOException {
+       Scanner scan = new Scanner(System.in);
+       double qt = ();
+       double dm = ();
+       double nk = ();
+       double pn = ();
+       
+       
+         
+     }
+
+}

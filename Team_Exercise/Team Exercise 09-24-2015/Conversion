@@ -1,0 +1,24 @@
+/*
+ * There are 16 ounces in a pound. Finish the code below that is intended to let the user input the number of ounces and output the number of pounds and ounces. 
+ * So if they enter 37 it should output 2 pounds and 5 ounces.
+ * 
+ * Team Exercise 9/24/2015
+ * 
+ * @author Cesar Alexander Siete, Adrian Rivas, Andree Moreno
+ * @version 09/24/2015 
+ *  
+*/
+
+import java.util.Scannner;
+public class Conversion
+{
+ public static void main(String[] args)
+ {
+Scanner scan = new Scanner(System.in);
+int ounce = scan.nextInt();
+int pounds = (ounce/16);
+int oz = (ounce % 10);
+System.out.println(pounds + "pounds " + oz + "ounces");
+}
+
+}

@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class MatterState
+{
+    public static void main(String[] args)
+    {
+      /*
+       * Team Exercise 10/07/2015
+       * Complete the program below, in Dr. Java, so that it will print whether water is liquid, solid, or gaseous at the given temperature at sea level. 
+       * You can assume it is in Fahrenheit and if you donմ know what the different temperatures are for the different states of water, look it up.
+       * Solid: 32 F
+       * Liquid: 33-211 F
+       * Gas: 212 F
+       * @author: Cesar Alexander Siete, Andree Moreno, and Adrian Rivas
+       * @date: 10/07/15
+       * 
+       */
+      Scanner in = new Scanner(System.in);
+
+      System.out.println("Enter temperature: ");
+      double temp = in.nextDouble();
+      
+      if (temp <= 32)
+      {
+        System.out.println ("Solid");
+      } else if (temp >= 212)
+      {
+        System.out.println ("Gas");
+      }else{
+        System.out.println ("Liquid");
+      }
+      
+    }
+
+}
