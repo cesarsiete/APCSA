@@ -1,0 +1,221 @@
+public class Main {
+  public static void main(String [] args) {
+    Deck deck = new Deck();
+    Card[] hand1 = new Card[5];
+    Card[] hand2 = new Card[5];
+    for (int i = 0; i < hand1.length; i++) {
+      hand1[i] = deck.getTopCard();
+      hand2[i] = deck.getTopCard();
+    }
+    int hand1Sum = sum(hand1);
+    int hand2Sum = sum(hand2);
+    System.out.println("Hand 1: total points " + hand1Sum);
+    print(hand1);
+    System.out.println();
+    System.out.println("Hand 2: total points " + hand2Sum);
+    print(hand2);
+    System.out.println();
+    if (hand1Sum > hand2Sum) {
+      System.out.println("Hand 1 wins");
+    } else if (hand1Sum < hand2Sum) {
+      System.out.println("Hand 2 wins");
+    } else {
+      System.out.println("Draw");
+    }
+  }
+
+  private static void print(Card[] cards) {
+    for (Card card : cards) {
+      System.out.println(card);
+    }
+  }
+
+  private static int sum(Card[] cards) {
+    int sum = 0;
+    for (Card card : cards) {
+      sum += card.pointValue();
+    }
+    return sum;
+  }
+}
+
+
+
+
+import java.util.ArrayList;
+
+public class Deck {
+  private ArrayList<Card> deck;
+
+  public Deck() {
+    deck = new ArrayList<Card>();
+    deck = initDeck();
+    int times = randomInt(20);
+    System.out.println(times);
+    for (int i = 0; i < times; i++) {
+      deck = shuffleDeck();
+    }
+    System.out.println(deck);
+  }
+
+  public String toString() {
+    String temp = "";
+    for (Card c : deck) {
+      temp += c.toString() + "\n";
+    }
+    return temp;
+  }
+
+  public Card getTopCard() {
+    Card c = deck.get(0);
+    deck.remove(0);
+    return c;
+  }
+
+  public static ArrayList<Card> initDeck() {
+    ArrayList<String> ranks = new ArrayList<String>();
+    ranks.add("ace");
+    ranks.add("two");
+    ranks.add("three");
+    ranks.add("four");
+    ranks.add("five");
+    ranks.add("six");
+    ranks.add("seven");
+    ranks.add("eight");
+    ranks.add("nine");
+    ranks.add("ten");
+    ranks.add("jack");
+    ranks.add("queen");
+    ranks.add("king");
+
+    ArrayList<String> suites = new ArrayList<String>();
+    suites.add("clubs");
+    suites.add("diamonds");
+    suites.add("hearts");
+    suites.add("spades");
+    ArrayList<Card> deck = new ArrayList<Card>();
+    for (String s : suites) {
+      int p = 1;
+      for (String r : ranks) {
+        Card c = new Card(r, s, p);
+        p++;
+        deck.add(c);
+      }
+    }
+    return deck;
+  }
+
+  //SHUFFLE ****************************
+
+
+  public ArrayList<Card> shuffleDeck() {
+    ArrayList<Card> t = new ArrayList<Card>();
+    final int half = deck.size() / 2;
+    for (int i = 0; i < half; i++) {
+      t.add(deck.get(i));
+      t.add(deck.get(i + half));
+    }
+    // handle odd number of cards
+    if (deck.size() % 1 == 1) {
+      t.add(deck.get(deck.size() - 1));
+    }
+    return t;
+  }
+
+  private static int randomInt(int cap) {
+    return Math.abs((int) (Math.random() * Integer.MAX_VALUE) % cap);
+  }
+}
+
+
+
+
+public class Card {
+
+  /**
+   * String value that holds the suit of the card
+   */
+  private String suit;
+
+  /**
+   * String value that holds the rank of the card
+   */
+  private String rank;
+
+  /**
+   * int value that holds the point value.
+   */
+  private int pointValue;
+
+
+  /**
+   * Creates a new <code>Card</code> instance.
+   *
+   * @param cardRank  a <code>String</code> value
+   *                  containing the rank of the card
+   * @param cardSuit  a <code>String</code> value
+   *                  containing the suit of the card
+   * @param cardPointValue an <code>int</code> value
+   *                  containing the point value of the card
+   */
+  public Card(String cardRank, String cardSuit, int cardPointValue) {
+    //initializes a new Card with the given rank, suit, and point value
+    rank = cardRank;
+    suit = cardSuit;
+    pointValue = cardPointValue;
+
+  }
+
+
+  /**
+   * Accesses this <code>Card's</code> suit.
+   * @return this <code>Card's</code> suit.
+   */
+  public String suit() {
+    return suit;
+  }
+
+  /**
+   * Accesses this <code>Card's</code> rank.
+   * @return this <code>Card's</code> rank.
+   */
+  public String rank() {
+    return rank;
+  }
+
+  /**
+   * Accesses this <code>Card's</code> point value.
+   * @return this <code>Card's</code> point value.
+   */
+  public int pointValue() {
+    return pointValue;
+  }
+
+  /** Compare this card with the argument.
+   * @param otherCard the other card to compare to this
+   * @return true if the rank, suit, and point value of this card
+   *              are equal to those of the argument;
+   *         false otherwise.
+   */
+  public boolean matches(Card otherCard) {
+    return otherCard.suit().equals(this.suit())
+        && otherCard.rank().equals(this.rank())
+        && otherCard.pointValue() == this.pointValue();
+  }
+
+  /**
+   * Converts the rank, suit, and point value into a string in the format
+   *     "[Rank] of [Suit] (point value = [PointValue])".
+   * This provides a useful way of printing the contents
+   * of a <code>Deck</code> in an easily readable format or performing
+   * other similar functions.
+   *
+   * @return a <code>String</code> containing the rank, suit,
+   *         and point value of the card.
+   */
+  @Override
+  public String toString() {
+    return rank + " of " + suit + " (point value = " + pointValue + ")";
+
+  }
+}

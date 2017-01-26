@@ -1,0 +1,173 @@
+/*
+ * AP CS MOOC
+ * Term 2 - Assignment 1: Time
+ * A class which represents the time of day in hours and seconds.
+ * 
+ * @author Cesar Alexander Siete
+ * @version 1/21/2016
+ */
+
+public class Time
+{
+     private int hour;
+     private int minute;  
+     private String time;
+     private String standardTime;
+     private int sH;
+     private boolean sTrue;
+     
+     /* Complete required constructors and methods here */
+     
+     /*
+      *Default constructor that sets time to 1200.  
+      */ 
+     public Time()
+     {
+         hour = 12;
+         minute = 00;
+     }
+     
+     /*
+      * If h is between 1 and 23 inclusive, set the hour to h. 
+      * Otherwise, set the hour to 0. If m is between 0 and 59 inclusive, 
+      * set the minutes to m. Otherwise, set the minutes to 0. 
+      */ 
+     public Time(int h, int m)
+     {
+         if (h >= 1 && h <=23)
+         {
+             hour = h;
+         }
+         else
+         {
+             hour = 0;
+         }
+         
+         if (m >= 1 && m <= 59)
+         {
+            minute = m;
+         }
+         else
+         {
+             minute = 00;
+         }
+     }
+     
+
+     /* Returns the time as a String of length 4 in the format: 0819. 
+      * Notice that if the hour or minute is one digit, it should 
+      * print a zero first. For example, 6 should print as 06.
+     */
+     public String toString()
+     {
+       if (hour >= 0 && hour <= 9)
+        {
+            time = "0" + Integer.toString(hour) + Integer.toString(minute);
+            return time;
+        }
+        else
+        {
+            time = Integer.toString(hour) + Integer.toString(minute);
+            return time;
+        }
+     }
+     
+     /*
+      * Returns the time as a String converted from military time 
+      * to standard time. For example, 0545 becomes 5:45 am and 
+      * 1306 becomes 1:06 pm.
+      */ 
+     public String convert()
+     {
+        if (hour >= 13 && hour <= 23) 
+         {
+             sTrue = true;
+         }
+         else
+         {
+             sTrue = false;
+         }
+         
+         if (hour == 13)
+         {
+             sH = 1;
+         }
+         else if (hour == 14)
+         {
+            sH = 2;
+         }
+         else if (hour == 15)
+         {
+            sH = 3;
+         }
+         else if (hour == 16)
+         {
+            sH = 4;
+         }
+         else if (hour == 17)
+         {
+            sH = 5;
+         }
+         else if (hour == 18)
+         {
+            sH = 6;
+         }
+         else if (hour == 19)
+         {
+            sH = 7;
+         }
+         else if (hour == 20)
+         {
+            sH = 8;
+         }
+         else if (hour == 21)
+         {
+            sH = 9;
+         }
+         else if (hour == 22)
+         {
+            sH = 10;
+         }
+         else if (hour == 23)
+         {
+            sH = 11;
+        }
+        else if (hour == 00)
+        {
+            sH = 12;
+            sTrue = false;
+        }
+        
+         if (sTrue = true)
+         {
+             standardTime = Integer.toString(sH) + ":" + Integer.toString(minute) + " pm";
+         }
+         else if (sTrue = false)
+         {
+            if (sH == 12)
+             {
+             standardTime = Integer.toString(sH) + ":" + Integer.toString(minute) + " am";
+             }
+             standardTime = Integer.toString(hour) + ":" + Integer.toString(minute) + " am";
+         }
+         return standardTime;
+     }
+     
+    /*
+     * Advances the time by one minute. 
+     * Remember that 60 minutes = 1 hour. 
+     * Therefore, if your time was 0359, and you add one minute, 
+     * it becomes 0400. 2359 should increment to 0000.
+     */ 
+    public void increment()
+    {
+      minute++;
+      if (minute == 60)
+      {
+          minute = 00;
+          hour++;
+      }
+      else{}
+    }
+    
+}

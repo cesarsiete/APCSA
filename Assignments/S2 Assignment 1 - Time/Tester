@@ -1,0 +1,26 @@
+/*
+ * AP CS MOOC
+ * Term 2 - Assignment 1: Time
+ * Use this runner program to test your Assignment 1 solution.
+ */
+
+import java.io.IOException;
+
+
+
+class Tester
+{
+
+ public static void main(String str[]) throws IOException
+ {
+
+  Time time1 = new Time(10, 35);
+  System.out.println("time1: " + time1);
+  int x = 3;
+  int y = 4;
+  System.out.println(Integer.toString(x) + Integer.toString(y));
+  
+ }
+
+}
+

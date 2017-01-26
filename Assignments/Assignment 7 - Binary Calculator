@@ -1,0 +1,134 @@
+import java.util.Scanner; 
+import java.lang.Math; 
+/******************************* 
+ * author@ Cesar Alexander Siete 
+ * version@ 1.0 
+ * date@ 12/07/2015 
+ *  
+ * For this lab, you will enter two numbers in base ten and translate them to binary. You will then add the numbers in binary and print out the result. 
+ * All numbers entered will be between 0 and 255, inclusive, and binary output is limited to 8 bits.  
+ * This means that the sum of the two added numbers will also be limited to 8 bits.  
+ * If the sum of the two numbers is more than 8 bits, please print the first 8 digits of the sum and the message "Error: overflow". 
+ * Your program should represent binary numbers using integer arrays, with the ones digit (2^0) stored at index 0, the twos digit (2^1) stored at index 1,  
+ * all the way up to the 2^7 digit stored at index 7. 
+ * Your program should include the following methods: 
+ * int[] convertToBinary(int b)Translates the parameter to a binary value and returns it stored as an array of ints. 
+ * void printBin(int b[])Outputs the binary number stored in the array on one line. Please note, there should be exactly one space between each output 0 or 1. 
+ * int[] addBin(int a[], int b[])Adds the two binary numbers stored in the arrays, and returns the sum in a new array of ints. 
+ *  
+ * Sample Run 1: 
+ * Enter a base ten number between 0 and 255, inclusive. 
+ * 56 
+ * Enter a base ten number between 0 and 255, inclusive. 
+ * 2 
+ *  
+ * First binary number: 
+ * 0 0 1 1 1 0 0 0 
+ *  
+ * Second binary number: 
+ * 0 0 0 0 0 0 1 0 
+ *  
+ * Added: 
+ * 0 0 1 1 1 0 1 0 
+ *  
+ * Sample Run 2: 
+ * Enter a base ten number between 0 and 255, inclusive. 
+ * 200 
+ * Enter a base ten number between 0 and 255, inclusive. 
+ * 150 
+ *  
+ * First binary number: 
+ * 1 1 0 0 1 0 0 0 
+ *  
+ * Second binary number: 
+ * 1 0 0 1 0 1 1 0 
+ *  
+ * Added: 
+ * Error: overflow 
+ * 0 1 0 1 1 1 1 0 
+ *******************************/ 
+public class Main 
+{ 
+   public static void main (String [] args) 
+   { 
+       int first; 
+      int second; 
+      Scanner in = new Scanner(System.in); 
+       
+      System.out.println("Enter a base ten number between 0 and 255, inclusive."); 
+      first = in.nextInt(); 
+       
+      System.out.println("Enter a base ten number between 0 and 255, inclusive."); 
+      second = in.nextInt(); 
+       
+      System.out.println("First binary number:"); 
+      binaryform(first); 
+       
+      System.out.println("\nSecond binary number:"); 
+      binaryform(second); 
+       
+      int added = first+second; 
+      System.out.println("\nAdded:");  
+      if (added <= 256)
+      {
+          System.out.println("Error: overflow");
+      }
+      binaryform(added);
+   } 
+    
+   private static Object binaryform(int number) 
+   { 
+ 
+      int remainder; 
+ 
+      if (number <= 1) 
+      { 
+         System.out.print(number); 
+         return "  "; 
+      }    
+      remainder = number % 2; 
+      binaryform (number >> 1); 
+      System.out.print(remainder); 
+      { 
+         return "  "; 
+      } 
+   } 
+    
+   /* 
+   public static void binaryToTen (String [] args) 
+   { 
+   int [] positionNumsArr= {1,2,4,8,16,32,64,128}; 
+   int[] numberSplit = new int [8]; 
+   Scanner scanNum = new Scanner(System.in); 
+   int count1 = 0; 
+   int decimalValue = 0; 
+ 
+ 
+   System.out.println("Please enter a positive binary number.(Only 1s and 0s)"); 
+   int number = scanNum.nextInt(); 
+ 
+   while (number > 0)  
+   {      
+      numberSplit[count1] = ( number % 10); 
+      if (numberSplit[count1] != 1 && numberSplit[count1] != 0) 
+      { 
+      System.out.println("Was not made of only \"1\" or \"0\" The program will now restart"); 
+      main(null); 
+      } 
+      count1++;  
+      number = number / 10; 
+   } 
+ 
+   for (int count2 = 0;count2 < 8;count2++) 
+   { 
+       if (numberSplit[count2] == 1) 
+       { 
+           decimalValue = decimalValue + positionNumsArr[count2]; 
+       } 
+   } 
+ 
+   System.out.print(decimalValue); 
+ 
+   } 
+   */ 
+}

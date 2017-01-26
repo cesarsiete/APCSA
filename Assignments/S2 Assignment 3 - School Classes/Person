@@ -1,0 +1,23 @@
+
+/**
+ * Write a description of class Student here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Person
+{
+    private String firstName;
+    private String lastName;
+
+    public Person(String fName, String lName)
+    {
+        firstName = fName;
+        lastName = lName;
+    }
+
+    public String toString()
+    {
+        return lastName + ", " + firstName;
+    }
+}

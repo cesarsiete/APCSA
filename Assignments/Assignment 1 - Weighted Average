@@ -1,0 +1,73 @@
+/*
+ * Assignment One- Weighted Average
+ *For this assignment, write a program that will input a set of grades and compute a weighted average.
+  The program should input 2 test scores (as ints), 3 quiz scores (also as ints) and a homework average (as a double).
+  The program should then output the test average, quiz average and final grade (as doubles).
+  The final grade should be a weighted average. Count the test average as 50% of the final grade, the quiz average as 30% of the final grade and the homework average as 20% of the final grade.
+  Sample Run:
+  Please enter your test grades.
+  Test 1: 89
+  Test 2: 86
+
+  Please enter your quiz grades.
+  Quiz 1: 84
+  Quiz 2: 84
+  Quiz 3: 83
+
+  Please enter your homework average.
+  Homework: 90.12
+
+  Test Average: 87.5
+  Quiz Average: 83.66666666666667
+  Final Grade: 86.874
+ * 
+ * @author Cesar Alexander Siete
+ * @version 09/21/2015 
+ */
+
+import java.io.*;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+class Main{
+
+     public static void main (String str[]) throws IOException {
+       Scanner scan = new Scanner(System.in);
+       
+       // Test
+       System.out.println("Please enter your test grades.");
+       System.out.print("Test 1: ");
+       double t1 = scan.nextDouble();
+       System.out.print("Test 2: ");
+       double t2 = scan.nextDouble();
+       
+       //Quiz
+       System.out.println("\nPlease enter your quiz grades.");
+       System.out.print("Quiz 1: ");
+       double q1 = scan.nextDouble();
+       System.out.print("Quiz 2: ");
+       double q2 = scan.nextDouble();
+       System.out.print("Quiz 3: ");
+       double q3 = scan.nextDouble();
+       
+       //Homework
+       System.out.println("\nPlease enter your homework average.");
+       System.out.print("Homework: ");
+       double h1 = scan.nextDouble();
+       
+       //Test Average
+       double ta =(t1 + t2)/2;
+       System.out.print("\nTest Average: " + ta);
+    
+       //Quiz Average
+       double qa = (q1+q2+q3)/3;
+       System.out.print("\nQuiz Average: " + qa);
+       
+       //Final Grade
+       System.out.print("\nFinal Grade: " +((ta*0.50)+(qa*0.30)+(h1*0.20)));
+       
+
+     }
+
+}

@@ -1,0 +1,109 @@
+/******************************    
+ * Assignment 6 - Merging Arrays
+ * 
+ * @author Cesar Alexander Siete
+ * @version 1.0
+ * @since 2015-11-23
+ ******************************/
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.lang.Math;
+
+class Main{
+
+     public static void main (String str[]) throws IOException {
+
+    Scanner scan = new Scanner(System.in);
+    
+    //Variables 
+    boolean isAscending = true; 
+    int [] array1 = new int[10000]; //First Array set
+    int [] array2 = new int[10000]; //Second Array set
+    int array1Count = 0;
+    int array2Count = 0;
+    
+    //First Array
+    System.out.println("Enter the values for the first array, up to 10000 values, enter a negative number to quit.");
+    int ui = scan.nextInt();
+    int lastIndexArray1 = 0;
+    
+    while(ui >= 0)
+    {
+      array1[lastIndexArray1] = ui;
+       if(lastIndexArray1 > 0 && ui < array1[lastIndexArray1-1])
+            {
+              isAscending = false;
+            }
+      lastIndexArray1++;
+      ui = scan.nextInt();
+    }
+    
+    //Second Array
+    System.out.println("Enter the values for the second array, up to 10000 values, enter a negative number to quit");
+    ui = scan.nextInt();
+    int lastIndexArray2 = 0; 
+    
+    while(ui >= 0)
+    {
+      array2[lastIndexArray2] = ui;
+      if(lastIndexArray1 > 0 && ui < array1[lastIndexArray1-1])
+            {
+              isAscending = false;
+            }
+      lastIndexArray2++;
+      ui = scan.nextInt();
+    }
+    
+    //Third Array
+    int [] array3 = new int [lastIndexArray1+lastIndexArray2]; //Third Array set
+    for(int i = 0; i < array3.length; i++)
+    {
+      if (array2Count == lastIndexArray2) 
+      {
+        array3[i] = array1[array1Count++];
+      }
+      else if (array1Count == lastIndexArray1) 
+      {
+        array3[i] = array2[array2Count++];
+      }
+      else if (array1[array1Count] < array2[array2Count]) 
+      {
+        array3[i] = array1[array1Count++];
+      } 
+      else 
+      {
+        array3[i] = array2[array2Count++];
+      }
+    }
+    
+    
+    //Print first array
+    System.out.println("First Array:");
+    for(int i = 0; i<lastIndexArray1; i++)
+    {
+      System.out.print(array1[i] + " ");
+    }
+    
+    //Print second array
+    System.out.println("\nSecond Array:");
+    for(int i = 0; i<lastIndexArray2; i++)
+    {
+      System.out.print(array2[i] + " ");
+    }
+    
+    //Print ERROR
+    if(!isAscending)
+    {
+      System.out.println("\nERROR: Array not in correct order");
+    }
+    
+    //Print third array
+    System.out.println("\nMerged Array:");
+    for(int i = 0; i<array3.length; i++)
+    {
+        System.out.print(array3[i] + " ");
+    }   
+     }
+
+}

@@ -1,0 +1,72 @@
+/*
+ * Write a program that will simulate a change machine found at cash registers. Input the amount due and amount paid from the keyboard.
+   Tell the user how much change is owed and number of quarters, dimes, nickels, and pennies in change a customer would receive.
+   Pay special attention to roundoff error. Your program should use division and modular division. No ifճ or loops may be used. You may assume all change will be a 
+   positive number with no more than two decimal places. If more than $1.00 is owed, the full value should be included in the number of quarters returned. For example, 
+   $2.50 should be returned as 10 quarters.
+   Hint: Modular division is a great way to find the remainder of a division. Think about how you can use this to calculate the change that is left over after some coins are 
+   given.
+   Sample Run:
+     Please Enter the Cost of the Item: 
+     4.57 
+     Please Enter the Amount Paid: 
+     5.00 
+     Change Owed: 0.43 
+     Quarters: 1
+     Dimes: 1
+     Nickels: 1 
+     Pennies: 3
+     
+ *Assignment 2 - Change Machine
+ *@author Cesar Alexander Siete
+ *@version 09/30/2015
+ *
+ */
+
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.lang.Math;
+
+import java.util.Scanner;
+
+class Main{
+
+     public static void main (String str[]) throws IOException {
+
+       Scanner scan = new Scanner(System.in);
+           
+           //Variables
+           int quarter = 25;
+           int dime = 10;
+           int nickel = 5;
+           int penny = 1;
+           double itemAmount;
+           double amountGiven;
+           double changeOwed;
+           
+           //Calculating the change 
+           System.out.println("Please Enter the Cost of the Item:");
+           itemAmount = scan.nextDouble();
+           System.out.println("Please Enter the Amount Paid:");
+           amountGiven = scan.nextDouble();
+           changeOwed = Math.round(amountGiven*100) - Math.round(itemAmount*100);
+           System.out.print("Change Owed: " + changeOwed/100);
+           
+           //Change Calculation
+           double quarterOwed = (int) changeOwed / quarter ;
+           double dimeOwed = (int) (changeOwed%quarter) / dime;
+           double nickelOwed = (int) (changeOwed%quarter%dime) / nickel;
+           double pennyOwed = (int) (changeOwed%quarter%dime%nickel);
+           
+           
+           //Change in Quarters, Dimes, Nickles, and Pennies
+           System.out.print("\nQuarters: " + (int) quarterOwed);
+           System.out.print("\nDimes: " + (int) dimeOwed);
+           System.out.print("\nNickels: " + (int) nickelOwed);
+           System.out.print("\nPennies:" + (int) pennyOwed);
+       
+       
+     }
+
+}

@@ -1,0 +1,109 @@
+/*
+ * AP CS MOOC
+ * Term 2 - Assignment 1: Time
+ * A class which represents the time of day in hours and seconds.
+ * 
+ * @author Cesar Alexander Siete
+ * @version 1/21/2016
+ */
+
+public class TimeTester
+{
+     private int hour;
+     private int minute;  
+     private String time;
+     private String standardTime;
+     private int sH;
+     private boolean sTrue;
+     
+     /* Complete required constructors and methods here */
+     
+     /*
+      *Default constructor that sets time to 1200.  
+      */ 
+     public TimeTester()
+     {
+         hour = 12;
+         minute = 00;
+     }
+
+         public TimeTester(int h, int m)
+    {
+        if ( h >= 1 && h <= 23)
+            hour = h;
+        else 
+            hour = 0;
+        if ( m >= 0 && m <= 59)
+            minute = m;
+        else 
+            minute = 0;
+    }
+    
+    public String toString()
+    {
+        String s = "";
+        if ( hour < 10 && minute < 10)
+            s = "0" + hour + "0" + minute;
+        else if ( hour < 10 && minute > 10)
+            s = "0" + hour + minute;
+        else if ( hour > 10 && minute < 10)
+            s = hour + "0" + minute;
+        else if ( hour > 10 && minute > 10)
+            s = hour  +""+ minute;
+        else if ( hour == 0)
+            s = "0" + hour + minute;
+        else if ( minute == 0)
+            s = hour + "0" + minute;
+    
+        return s;
+    
+    }
+    
+    public String convert()
+    {
+        String c = "";
+    
+        if ( hour > 12)
+        {
+            if(hour > 10){
+                if((hour - 12) == 12)
+                     c = (hour - 12) +":"+ minute + "am";
+                else
+                   c = (hour - 12) +":"+ minute + "pm";
+            }
+            else
+            {
+                c = "0" + (hour - 12) +":"+ minute + "pm";
+            }
+        }
+        else
+            c = hour +":"+ minute + "am";
+        if(minute == 0)
+        {
+            c= c.substring(0, c.length()-2)+"0"+c.substring(c.length()-2, c.length());
+        }
+        return c;
+    }
+
+     
+    /*
+     * Advances the time by one minute. 
+     * Remember that 60 minutes = 1 hour. 
+     * Therefore, if your time was 0359, and you add one minute, 
+     * it becomes 0400. 2359 should increment to 0000.
+     */ 
+    public void increment()
+  {
+    minute++;
+    if (minute >= 60)
+    {
+      hour++;
+      minute = (minute - 60);
+    }
+    if ( hour >= 24)
+    {
+      hour = (hour - 24);
+    } 
+    }
+    
+}

@@ -1,0 +1,252 @@
+/******************************    
+ *Assignment 3 - Horoscope
+ *@author Cesar Alexander Siete
+ *@version 09/30/2015
+ ******************************/
+
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+
+class Main{
+
+     public static void main (String str[]) throws IOException {
+
+       Scanner scan = new Scanner(System.in);
+       int month;
+       int day;
+       String nameMonth;
+       String nameDay;
+       
+       
+       //Asking the Questions
+       System.out.println("What month were you born in? (number)");
+       month = scan.nextInt();
+       System.out.println("What day (number)");
+       day = scan.nextInt();
+       
+       
+       //Month Names
+       if (month == 1)
+       {nameMonth = "January";}
+       
+       else if (month == 2)
+       {nameMonth = "Feburary";}
+       
+       else if (month == 3)
+       {nameMonth = "March";}
+       
+       else if (month == 4)
+       {nameMonth = "April";}
+       
+       else if (month == 5)
+       {nameMonth = "May";}
+       
+       else if (month == 6)
+       {nameMonth = "June";}
+       
+       else if (month == 7)
+       {nameMonth = "July";}
+       
+       else if (month == 8)
+       {nameMonth = "August";}
+       
+       else if (month == 9)
+       {nameMonth = "September";}
+       
+       else if (month == 10)
+       {nameMonth = "October";}
+       
+       else if (month == 11)
+       {nameMonth = "November";}
+       
+       else 
+       {nameMonth = "December";}
+       
+       
+       //Day Names
+       if (day == 1)
+       {nameDay = "first";}
+       
+       else if (day == 2)
+       {nameDay = "second";}
+       
+       else if (day == 3)
+       {nameDay = "third";}
+       
+       else if (day == 4)
+       {nameDay = "fourth";}
+       
+       else if (day == 5)
+       {nameDay = "fith";}
+       
+       else if (day == 6)
+       {nameDay = "sixth";}
+       
+       else if (day == 7)
+       {nameDay = "seventh";}
+       
+       else if (day == 8)
+       {nameDay = "eigth";}
+       
+       else if (day == 9)
+       {nameDay = "ninth";}
+       
+       else if (day == 10)
+       {nameDay = "tenth";}
+       
+       else if (day == 11)
+       {nameDay = "eleventh";}
+       
+       else if (day == 12)
+       {nameDay = "twelfth";}
+       
+       else if (day == 13)
+       {nameDay = "thirteenth";}
+       
+       else if (day == 14)
+       {nameDay = "fourteenth";}
+       
+       else if (day == 15)
+       {nameDay = "fifteenth";}
+       
+       else if (day == 16)
+       {nameDay = "sixteenth";}
+       
+       else if (day == 17)
+       {nameDay = "seventeenth";}
+       
+       else if (day == 18)
+       {nameDay = "eighteenth";}
+       
+       else if (day == 19)
+       {nameDay = "nineteenth";}
+       
+       else if (day == 20)
+       {nameDay = "twentieth";}
+       
+       else if (day == 21)
+       {nameDay = "twenty-first";}
+       
+       else if (day == 22)
+       {nameDay = "twenty-second";}
+       
+       else if (day == 23)
+       {nameDay = "twenty-third";}
+       
+       else if (day == 24)
+       {nameDay = "twenty-fourth";}
+       
+       else if (day == 25)
+       {nameDay = "twenty-fifth";}
+       
+       else if (day == 26)
+       {nameDay = "twenty-sixth";}
+       
+       else if (day == 27)
+       {nameDay = "twenty-seventh";}
+       
+       else if (day == 28)
+       {nameDay = "twenty-eigth";}
+       
+       else if (day == 29)
+       {nameDay = "twenty-nineth";}
+       
+       else if (day == 30)
+       {nameDay = "thirtieth";}
+       else
+       {nameDay = "thirty-first";}
+       
+       
+       //Error
+       if (day > 31 || month > 12)
+       {
+           nameMonth = "error";
+           nameDay = "";
+       }
+       
+      
+       //Final Show
+       System.out.println("Your birthday is: " + nameMonth + " " + nameDay);
+       
+       
+       //Sign Calculation
+       if ((month == 12 && day >= 22 && day <= 31) || (month ==  1 && day >= 1 && day <= 19))
+        {
+           System.out.println("Capricorn");
+           System.out.println("Horoscope: Your high energy will help you through this rather hectic day. You will learn valuable skills if you sign up for seminars today. You will have some wonderful ideas that should bring you extra money.");
+        }
+       
+        else if ((month ==  1 && day >= 20 && day <= 31) || (month ==  2 && day >= 1 && day <= 17))
+        {
+           System.out.println("Aquarius");
+           System.out.println("Horoscope: Things aren't as they appear. Travel and educational pursuits may help alleviate the stress you have been feeling. You have your own family to consider as well. Go after your professional goals.");
+        }
+        
+        else if ((month ==  2 && day >= 18 && day <= 31) || (month ==  3 && day >= 1 && day <= 19))
+        {
+           System.out.println("Pisces");
+           System.out.println("Horoscope: You will gain valuable insight and knowledge through the experiences you have along the way. You should be putting in some overtime. Travel will be enjoyable but could be expensive.");  
+        }
+        
+        else if ((month ==  3 && day >= 20 && day <= 31) || (month ==  4 && day >= 1 && day <= 19))
+        {
+           System.out.println("Aries");
+           System.out.println("Horoscope: Don't count on others to cover up for your shortcomings. You may find it necessary to confront a situation that has gotten out of hand. Your ability to charm others will bring added popularity.");  
+
+        }
+        
+        else if ((month ==  4 && day >= 20 && day <= 30) || (month ==  5 && day >= 1 && day <= 20))
+        {
+           System.out.println("Taurus");
+           System.out.println("Horoscope: Use discretion, especially if involved with someone from work. You will need to do a lot of research if you wish to get to the bottom of things. Your dynamic, determined approach will win favors as well as a helping hand.");  
+        }
+        
+        else if ((month ==  5 && day >= 21 && day <= 31) || (month ==  6 && day >= 1 && day <= 20))
+        {
+           System.out.println("Gemini");
+           System.out.println("Horoscope: Be discreet and don't present your ideas until you're certain that they're foolproof. You will benefit by taking care of other people's concerns. There is not much you can do to alleviate the problem, but consider putting some extra work into your house.");  
+        }
+        
+        else if ((month ==  6 && day >= 21 && day <= 30) || (month ==  7 && day >= 1 && day <= 22))
+        {
+           System.out.println("Cancer");
+           System.out.println("Horoscope: If they're too demanding, reconsider this union. Don't agree to make any of those cosmetic alterations you've been considering. Try to satisfy both of your needs."); 
+        }
+        
+        else if ((month ==  7 && day >= 23 && day <= 31) || (month ==  8 && day >= 1 && day <= 22))
+        {
+           System.out.println("Leo");
+           System.out.println("Horoscope: Money can be made if your are willing to take a chance. Go out shopping today. You can visit clients and make a big impression just by giving them some hands-on help.");
+        }
+        
+        else if ((month ==  8 && day >= 23 && day <= 31) || (month ==  9 && day >= 1 && day <= 22))
+        {
+           System.out.println("Virgo");
+           System.out.println("Horoscope: Try not to hurt your partner's feelings. Think twice before you speak. Put your energy into moneymaking ventures.");
+        }
+        
+        else if ((month ==  9 && day >= 23 && day <= 30) || (month == 10 && day >= 1 && day <= 22))
+        {
+           System.out.println("Libra");
+           System.out.println("Horoscope: Tempers could boil if someone you work with has not been pulling their weight. Children might be on your mind. Don't hesitate to make special plans just for two. When the work is done, they may serve you for a change.");
+        }
+        
+        else if ((month == 10 && day >= 23 && day <= 31) || (month == 11 && day >= 1 && day <= 21))
+        {
+           System.out.println("Scorpio");
+           System.out.println("Horoscope: You may need to lend an ear to an old friend. Those you live with may be experiencing problems. Stress coupled with diet will add to stomach problems.");
+        }
+        
+        else if ((month == 11 && day >= 22 && day <= 30) || (month == 12 && day >= 1 && day <= 21))
+        {
+           System.out.println("Sagittarius");
+           System.out.println("Horoscope: Verbal abuse may lead to walkouts; don't make any rash statements you may regret later. Take care of any medical problems if they've been troubling you. Take that long overdue vacation if you can.");
+        }
+        
+        else
+        {System.out.println("");}
+
+     }
+
+}

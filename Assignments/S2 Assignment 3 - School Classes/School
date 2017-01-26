@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+
+public class School
+{
+    private ArrayList<Student> students = new ArrayList<Student>(); //A list of students at the school.
+    private ArrayList<Teacher> teachers = new ArrayList<Teacher>(); //A list of teachers at the school.
+    
+    /*
+     * A constructor that specifies teachers and students at a school.  
+     */
+    public School(ArrayList<Student> students, ArrayList<Teacher> teachers)
+    {
+        this.students = students;
+        this.teachers = teachers;
+    }
+
+    /*
+     * Returns a String listing all the schools's students that are at 
+     * the specified grade level. Returns an empty String if the school has 
+     * no students at the specified level. See the Sample Run below for the 
+     * format of the returned String.
+     */
+    public String getGradeLevel(int level)
+    {
+         String result = "";
+         for(Student a: students)
+         {
+             if(a.getLevel() == level)
+             {
+                 result += a.toString() + " ";
+             }
+         }
+         return result;
+    }
+    
+    /*
+     * Returns a multiline String listing the teachers and students at the school. 
+     * The String is formatted as follows:
+     * 
+     *  Faculty:
+     *  {listing of faculty, one on each line}
+     *  
+     *  Student Body:
+     *  {listing of students, one on each line}  
+     */
+    public String toString()
+    {
+        String result = "Faculty:\n";
+        for(Teacher a: teachers)
+        {
+            result += a.toString() + "\n";
+        }
+                        
+        result += "\nStudent Body:\n";                
+        for(Student a: students)
+        {
+            result += a.toString() + "\n";
+        }
+                       
+        return result;
+    }
+}
