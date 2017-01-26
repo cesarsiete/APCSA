@@ -1,0 +1,21 @@
+
+public class FlyingSquirrel extends Squirrel
+{
+    private int distance;
+    
+    public FlyingSquirrel()
+        {
+            this("Red");
+        }
+        
+    public FlyingSquirrel(String c, String d)
+        {
+            super(c);
+            distance = d;
+        }
+        
+    public String toString()
+    {
+        return super.toString() + "\nDistance: " + distance;
+    }
+}

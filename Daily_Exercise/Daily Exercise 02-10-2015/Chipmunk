@@ -1,0 +1,22 @@
+public class Chipmunk extends TreeRat
+{
+    private String faveFood;
+    private String color;  
+    
+    public Chipmunk()
+        {
+            this("Red");
+        }
+    
+    public Chipmunk (String s, String f, String c)
+        {
+            super(s);
+            faveFood = f;
+            color = c;
+        }
+        
+    public String toString()
+    {
+        return super.toString() + "\nFavortite Food: " + faveFood + "\nColor: " + color;
+    }
+}

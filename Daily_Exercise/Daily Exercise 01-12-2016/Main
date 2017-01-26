@@ -1,0 +1,16 @@
+import java.io.*;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+import java.lang.Math;
+import java.util.ArrayList;
+
+import java.util.*;
+ 
+class Main{ 
+     public static void main (String str[]) throws IOException {
+          Classroom c = new Classroom();
+          
+          System.out.println(c);
+     }
+}

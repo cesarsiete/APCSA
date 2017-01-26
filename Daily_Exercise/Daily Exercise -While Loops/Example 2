@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+/**
+ * While Loop Example 2
+ * This loop is ended by a counter.
+ * 
+ * @author Daniel Law
+ * @version 10/14/2015
+ */
+public class WhileLoopExample2
+{
+    public static void main(String[] args)
+    {
+        int counter = 0;
+       
+        while ( counter < 5 )
+        {
+            System.out.println("Lane Tech");
+            
+            counter++;
+        }
+                
+        System.out.println("\nDone.");   //Optional line
+    }
+}

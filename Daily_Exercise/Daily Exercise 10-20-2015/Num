@@ -1,0 +1,49 @@
+/*
+ * Write a complete program that will ask the user for positive whole numbers. When the user enters -1, the program will stop and print the number of even and odd numbers.
+ * Sample run:
+ * Enter a number: 1
+ * Enter a number: 2
+ * Enter a number: 3
+ * Enter a number: 4
+ * Enter a number: 5
+ * Enter a number: -1
+ * Even numbers: 2
+ * Odd numbers: 3
+ * 
+ * @author Cesar Alexander Siete and Andree Moreno
+ * @version 09/24/2015 
+ *  
+*/
+
+import java.util.Scanner;
+import java.lang.Math;
+public class Num
+{
+ public static void main(String[] args)
+ {
+     Scanner scan = new Scanner(System.in);
+     int num = 0;
+     int even = 0;
+     int odd = 0;
+     
+     while (num > -1)
+     {
+         System.out.print("Enter a number: " );
+         num = scan.nextInt();
+         
+         if (num % 2 == 0)
+         {
+             even++;
+         }else 
+         {
+             odd++;
+         }
+     }
+     odd--;
+     System.out.println("Even numbers: " + even);
+     System.out.println("Odd numbers: " + odd);
+         
+
+ }
+
+}

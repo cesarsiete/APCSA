@@ -1,0 +1,21 @@
+
+public class Squirrel extends TreeRat
+{
+    private String color;
+    
+    public Squirrel()
+        {
+            this("none");
+        }
+    
+    public Squirrel (String s, String c)
+        {
+            super(s);
+            color = c;
+        }
+        
+    public String toString()
+    {
+        return super.toString() + "\nColor " + color;
+    }
+}

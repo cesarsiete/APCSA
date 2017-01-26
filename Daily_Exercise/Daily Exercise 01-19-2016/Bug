@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Bug{
+    private int iP;
+    private boolean D = true; //True is right, False is left
+    public Bug(int intialPosition)
+    {
+        intialPosition = iP;
+    }
+    
+    public void turn(){
+        D = !D;
+    }
+    
+    public void move(){
+        if (D == true)
+        {
+            iP++;
+        }
+        else{
+            iP--;
+        }
+    }
+    
+    public int getPosition(){
+        return iP;
+    }
+}

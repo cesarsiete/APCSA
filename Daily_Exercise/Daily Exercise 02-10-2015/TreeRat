@@ -1,0 +1,14 @@
+public class TreeRat
+{
+    private String sound;
+    
+    public TreeRat(String pSound)
+    {     
+        sound = pSound;
+    }
+        
+    public String toString()
+    {
+        return "Sound: " + sound;
+    }
+}

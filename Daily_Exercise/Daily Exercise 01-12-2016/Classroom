@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Classroom
+{
+    private ArrayList<String> roster;
+    
+    public Classroom(ArrayList<String> pRoster)
+    {
+        roster = pRoster;
+    }
+    
+    public void printAll()
+    {
+        
+    }
+    
+    public ArrayList<String> getRoster()
+    {
+        
+        //The line below is a placeholder to make sure this compiles
+        return new ArrayList<String>();
+    }
+    
+    public void addName(String pName)
+    {
+        
+    }
+    
+    public int getNumStudents()
+    {
+        
+        return 0;
+    }
+    
+    
+}

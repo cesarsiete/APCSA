@@ -1,0 +1,79 @@
+/**
+ * The Heater class defines an object that will act like a
+ * furnace in a house.
+ * 
+ * @author Daniel Law 
+ * @version 10/13/2014
+ */
+public class Heater
+{
+    private int currentTemp;
+    private int increment;
+    private int max;
+    private int min;
+
+    /**
+     * Fill out the documentation
+     */
+    public Heater()
+    {
+        max = 90;
+        min = 60;
+
+        currentTemp = 72;
+        increment = 2;
+    }
+
+    /**
+     * Fill out the documentation
+     * 
+     * @param pMin  What is pMin for?
+     * @param pMax  What is pMax for?
+     */
+    public Heater(int pMin, int pMax)
+    {
+        max = pMax;
+        min = pMin;
+
+        currentTemp = 72;
+        increment = 2;
+    }
+
+    /**
+     * Fill out the documentation
+     */
+    public void warmer()
+    {        
+        int targetTemp = currentTemp + increment;
+        currentTemp = Math.min( targetTemp, max );
+    }
+
+    /**
+     * Fill out the documentation
+     */
+    public void cooler()
+    {
+        int targetTemp = currentTemp - increment;
+        currentTemp = Math.max( targetTemp, min );
+    }
+
+    /**
+     * Fill out the documentation
+     * 
+     * @param pNewIncrementValue  What is pNewIncrementValue for?
+     */
+    public void setIncrement(int pNewIncrementValue)
+    {
+        increment = pNewIncrementValue;
+    }
+
+    /**
+     * Fill out the documentation
+     *      
+     * @return What does it return and what type is it?
+     */
+    public int getTemp()
+    {
+        return currentTemp;
+    }
+}

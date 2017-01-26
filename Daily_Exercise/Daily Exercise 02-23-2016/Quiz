@@ -1,0 +1,26 @@
+public class Quiz implements Measurable
+{
+   private double grade;
+   private String letterGrade;
+   
+   public Quiz(double grade, String letterGrade)
+   {
+       this.grade = grade;
+       this.letterGrade = letterGrade;
+   }
+   
+   public double getMeasure()
+   {
+       return grade;
+   }
+
+   public double getGrade()
+   {
+       return grade;
+   }
+   
+   public String getLetterGrade()
+   {
+       return letterGrade;
+   }
+}

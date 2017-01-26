@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+/**
+ * While Loop Example 4
+ * Same as the last one but it all is on one line with spaces
+ * 
+ * @author Daniel Law
+ * @version 10/14/2015
+ */
+public class WhileLoopExample4
+{
+    public static void main(String[] args)
+    {
+        int counter = 0;
+       
+        while ( counter < 10 )
+        {
+            System.out.print(counter + " "); 
+            counter++;
+        } 
+        
+        System.out.println("\nDone.");   //Optional line
+    }
+}

@@ -1,0 +1,38 @@
+/*
+ * Daily Exercise 10/26/2015
+ * Write a program to retrieve the user’s name. Store the name in a String. Create a loop that will print the user’s name but with each letter on a separate line. Your program has to accommodate anyone’s name. 
+ * Sample Run:
+ * Enter your name: Dan
+ * D
+ * a
+ * n
+ */
+
+import java.io.*;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+class Task5{
+
+
+     public static void main (String str[]) throws IOException {
+
+         Scanner scan = new Scanner (System.in);
+          
+         System.out.print("Enter your name: ");
+         String name = scan.nextLine();
+         int len = name.length();
+         int charNum = 0;
+         
+         while(len > 0)
+         {
+         char letter = name.charAt(charNum);
+         len -= 1;
+         charNum++;
+         System.out.println(letter);
+         }
+     }
+
+}
+

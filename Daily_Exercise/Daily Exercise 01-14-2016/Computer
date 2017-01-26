@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Computer
+{
+    //Instance fields or instance variables
+    private int yearMade;   //The year this computer was made
+    private int yearsInUse;
+    private double retailPrice;   //The retail price of one machine
+    private double costToManufacture;   //The cost to manufacture one machine
+    
+    public Computer()
+    {
+       Scanner scan = new Scanner(System.in);
+       yearMade = scan.nextInt();
+       yearsInUse = scan.nextInt();
+       retailPrice = scan.nextDouble();
+       costToManufacture = scan.nextDouble();
+    }
+    
+    /**
+     * Returns the profit made on this Computer.
+     * If you don't know how to calculate profit, Google it.
+     * 
+     * @return the profit as a double.
+     */
+    public double profitPerMachine()
+    {
+    
+        
+        return 0.0;     //Placeholder
+    }
+        
+    /**
+     * Increase the years in service for this Computer.
+     * 
+     * @param pYears  The number of additional years to add to this computer
+     */
+    public void increaseYearsInUse(int pYears)
+    {
+        
+    }
+}

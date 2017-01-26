@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+/**
+ * While Loop Example 1
+ * This loop is ended by user input.
+ * In other words, its ended by a sentinel value.
+ * 
+ * @author Daniel Law
+ * @version 10/14/2015
+ */
+public class WhileLoopExample1
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int counter = 0;
+        int sum = 0;
+        
+        System.out.print("Enter a value: ");
+        int userInput = in.nextInt();
+        sum += userInput;
+        
+        //-1 is the sentinel value
+        while ( userInput > -1 )
+        {
+            System.out.print("Enter a value: ");
+            userInput = in.nextInt();
+                        
+            counter++;
+            
+            if (userInput > -1)
+            {
+                sum += userInput;            
+            }
+        }
+                
+        System.out.println("You entered " + counter + " numbers.");
+        
+        double avg = (double)sum / counter;
+        System.out.println("The average is " + avg + ".");
+    }
+}

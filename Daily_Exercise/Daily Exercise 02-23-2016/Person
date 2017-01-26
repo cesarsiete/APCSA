@@ -1,0 +1,26 @@
+public class Person implements Measurable
+{
+    private String name;
+    private int height;
+    
+    public Person(String name, int height)
+   {
+       this.name = name;
+       this.height = height;
+   }
+   
+   public String getMeasure()
+   {
+       return height + "\t" + name;
+   }
+
+   public String getName()
+   {
+       return name;
+   }
+   
+   public int getHeight()
+   {
+       return height;
+   }
+}

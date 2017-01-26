@@ -1,0 +1,66 @@
+/**
+ * Homework represents a specific homework assignment
+ * 
+ * @author Cesar Alexander Siete
+ * @version 1/13/2016
+ */
+public class Homework
+{
+    private String subject;
+    private int estCompletionTime;
+    private int priority;
+    //private Date dueDate;
+    
+    public Homework(){
+        subject = "Math";
+        estCompletionTime = 12;
+        priority = 3;
+    }
+    
+    public Homework(String s, int est)
+    {
+      s = subject;
+      est = estCompletionTime;
+    }
+    
+    /**
+     * Changes the priority level to the new one specifed in the parameter
+     * 
+     * @param pNewPriority  The new priority level
+     */
+    public void changePriority(int pNewPriority)
+    {
+        priority = pNewPriority;
+    }
+    
+    /**
+     * Increases the estimated completion time by the amount
+     * specified in the parameter.
+     * 
+     * @param pAdditionalTime  Additional time to add 
+     */
+    public void increaseCompletionTime(int pAdditionalTime)
+    {
+        estCompletionTime += pAdditionalTime;
+    }
+    
+    /**
+     * An accessor. Returns the subject.
+     * 
+     * @return the subject as a String
+     */
+    public String getSubject()
+    {
+        return getSubject();
+    }
+    
+    /**
+     * An accessor. Returns the estimated completion time. 
+     * 
+     * @return the estimated completion time as an int
+     */
+    public int getEstCompletionTime()
+    {
+        return getEstCompletionTime();
+    }
+}

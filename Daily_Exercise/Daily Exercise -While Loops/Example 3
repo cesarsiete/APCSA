@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+/**
+ * While Loop Example 3
+ * Starts at 0 because the int counter is set to 0 and the println is printing it out 
+ * The while loop runs as long as counter is less than 10
+ * It counts up to 9 because it is less than 10
+ * The numbers are on seperate lines
+ * 
+ * @author Daniel Law
+ * @version 10/14/2015
+ */
+public class WhileLoopExample3
+{
+    public static void main(String[] args)
+    {
+        int counter = 0;
+       
+        while ( counter < 10 )
+        {
+            System.out.println(counter);                        
+            counter++;
+        }
+                
+        System.out.println("\nDone.");   //Optional line
+    }
+}

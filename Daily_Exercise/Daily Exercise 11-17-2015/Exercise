@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class DailyExerciseTask2_11_17_2015
+{
+    public static void main(String[] args)
+    {   
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Enter the first set. -1 to stop.):");
+        
+        int ui = in.nextInt();
+        
+        int[] a = new int[1000];        
+        int lastIndex = 0;
+        
+        boolean isAscending = true;
+        
+        while( ui > -1)
+        {
+            a[lastIndex] = ui;
+            
+            if ( lastIndex > 0 && ui < a[lastIndex-1] )
+            {
+                isAscending = false;
+            }
+            
+            ui = in.nextInt();
+            lastIndex++;
+        } 
+        
+        int count = 0;
+        System.out.println("\n\nYour array:");
+        for (int i = 0; i < lastIndex; i++)
+        {
+            System.out.print(a[i] + " ");
+            
+            if ( a[i] > 50)
+            {
+                count++;
+            }
+        }
+        
+        if (isAscending)
+        {
+            System.out.println("\n\nAscending");
+        }
+        else
+        {
+            System.out.println("\n\nNot Ascending");
+        }
+        
+    }
+}

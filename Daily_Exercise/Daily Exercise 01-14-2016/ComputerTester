@@ -1,0 +1,13 @@
+import java.util.Scanner;
+import java.lang.Math;
+import java.util.ArrayList;
+
+public class ComputerTester{
+    public static void main(String [] args){
+        Computer c = new Computer();
+        
+        c.Computer();
+        
+        System.out.println(c);
+    }
+}

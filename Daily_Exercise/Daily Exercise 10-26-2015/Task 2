@@ -1,0 +1,24 @@
+/*
+ * Daily Exercise 10/26/2015
+ */
+
+import java.io.*;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+class Task2{
+
+
+     public static void main (String str[]) throws IOException {
+
+         Scanner scan = new Scanner (System.in);
+          
+         String word = "Law";
+         int len = word.length();
+         System.out.println( len );
+                   
+     }
+
+}
+
